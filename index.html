@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Firestore Data</title>
+</head>
+<body>
+    <h1>Firestore Data</h1>
+    <div id="data-container"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+    <script>
+
+        // Your Firebase configuration
+        const firebaseConfig = {
+  apiKey: "AIzaSyAQZiVhXDRSrQ1ebOLQKQx2t2oK173rdNg",
+  authDomain: "jyoti-64a18.firebaseapp.com",
+  projectId: "jyoti-64a18",
+  storageBucket: "jyoti-64a18.appspot.com",
+  messagingSenderId: "234093050398",
+  appId: "1:234093050398:web:cea5bb2dac831dcdf9cc0f",
+  measurementId: "G-6X5ECQV6K2"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = firebase.firestore(app);
+
+        // Reference to the collection you want to fetch data from
+        const collectionRef = db.collection("sankeshwarasupermarket");
+
+        // Get all documents from the collection
+        collectionRef.get().then((querySnapshot) => {
+let html = "";
+            // Initialize an empty HTML string to store the data
+            querySnapshot.forEach((doc) => {
+            html += "<ul>";
+
+                // Get data from each document
+                const data = doc.data();
+                // Construct HTML to display the data
+                for (const [key, value] of Object.entries(data)) {
+                    html += `<li><strong>${key}:</strong> ${value}</li>`;
+                }
+            html += "</ul>";
+		html+="<hr>";
+
+            });
+            // Display the data in the HTML
+            document.getElementById("data-container").innerHTML = html;
+        }).catch((error) => {
+            // Error getting documents
+            console.error("Error getting documents:", error);
+        });
+    </script>
+</body>
+</html>
