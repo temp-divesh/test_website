@@ -1,1 +1,113 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20rem;
+    margin-top: 2rem;
+    z-index: -2;
+  }
+  
+  .card {
+    margin: 20px;
+    border: 2px solid #ededed;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .card-img {
+    width: 13rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    margin-bottom: 1rem;
+  }
+  
+  .card-reviews {
+    margin-bottom: 1rem;
+    display: flex;
+  }
+  
+  .rating-star {
+    color: #d5ab55;
+  }
+  
+  .total-reviews {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+  
+  .card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bag-icon {
+    color: #535353;
+  }
 
+
+
+
+
+  .card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%; /* You can adjust the width as needed */
+  }
+  
+  .column {
+    flex: 1;
+  }
+  
+  .image-column {
+    max-width: 150px; /* Fixed width for image column */
+    padding: 20px;
+  }
+  
+  .image-column img {
+    max-width: 100%;
+    max-height: 220px;
+  }
+  
+  .details-column {
+    padding: 20px;
+  }
+  
+  .card-details {
+    width: 100%;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .card-reviews {
+    margin-top: 10px;
+  }
+  
+  .card-price {
+    margin-top: 10px;
+  }
+  
+  .card-extra-details table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .card-extra-details td {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .card-extra-details td:first-child {
+    font-weight: bold;
+    width: 40%; /* Adjust width of the first column as needed */
+  }
+  
+  /* Additional styling as needed */
+  
